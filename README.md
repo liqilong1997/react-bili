@@ -1,4 +1,4 @@
-# bili参考从0搭建项目脚手架
+# bili参考从0搭建react项目
 
 ## webpack安装
 ### 1. 运行 ``` cnpm init -y ``` 初始化项目
@@ -60,3 +60,22 @@ webpack初始能处理js/json资源，不能处理css/img等其他资源
 2.html-webpack-plugin（插件 下载 引入 使用）
 功能： 默认创建一个空的html，自动引入打包输出的所有资源（js/css）
 ``` 
+### 7. 在项目中使用react
+```
+运行cnpm i react react-dom --save 安装包
+  react 专门用于创建组件和虚拟dom，同时组件的生命周期都在这个包里
+  react-dom 专门进行dom操作，主要应用场景就是ReactDom.render()
+```
+
+### 8. 在项目中使用JSX语法
+```
+使用babel转换
+  npm install babel-loader@8  @babel/core @babel/preset-env @babel/runtime @babel/plugin-transform-runtime @babel/plugin-proposal-class-properties -D 
+安装能识别转换jsx语法的包
+  cnpm i @babel/preset-react -D
+添加.babelrc配置文件
+  {
+    "presets": ["@babel/env", "@babel/preset-react"],
+    "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]
+  }
+```

@@ -38,7 +38,12 @@ module.exports = {
           // 将css文件编程common.js模块加载js中，里面内容是字符串类型
           'css-loader'
         ]
-      }
+      },
+      {
+        test:/\.js|jsx$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      } // exclude 排除配置文件夹
     ]
   },
   // plugins的配置
