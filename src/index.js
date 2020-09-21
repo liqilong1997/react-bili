@@ -1,16 +1,10 @@
-import React from 'react'
-import ReactDom from 'react-dom'
+// 入口文件，在项目中就是一个清单
 
-class CssCom extends React.Component{
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    <div>
-      <h1>颜色测试</h1>
-    </div>
-  }
-}
+// 引入核心组件
+import './pages/App'
 
-ReactDom.render(<Twocom></Twocom>, document.getElementById('app'))
+//引入初始化样式
 
+//引入全局样式
+
+import './assets/styles/core.scss'

@@ -39,11 +39,9 @@ module.exports = {
           'css-loader'
         ]
       },
-      {
-        test:/\.js|jsx$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
-      } // exclude 排除配置文件夹
+      {test:/\.js|jsx$/,use: 'babel-loader',exclude: /node_modules/}, // exclude 排除配置文件夹
+      {test: /\.scss$/,use: ['style-loader', {loader: "css-loader", options: {modules: {localIdentName: "[path][name]-[local]-[hash:5]"}}}, 'sass-loader']},//打包处理scss文件的loader 为css启动模块化
+      {test: /\.ttf|woff|eot|svg$/, use:'url-loader'}
     ]
   },
   // plugins的配置

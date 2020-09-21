@@ -79,3 +79,18 @@ webpack初始能处理js/json资源，不能处理css/img等其他资源
     "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]
   }
 ```
+
+### 快捷键（rcc 自动创建一个组件代码）
+
+### 9. 在项目中使用scss/less
+```
+  因为在项目中使用.css结尾的 必须要启用模块化，会影响到外部引入的样式组件
+  所以使用预处理器，自己的样式文件使用scss活着less，外部引入的使用css
+  安装能够解析scss/less文件的loader
+
+  运行 cnpm i sass-loader node-sass -D 安装
+
+  避免全局样式互相影响，为scss设置模块化 {loader: "css-loader", options: {modules: {localIdentName: "[path][name]-[local]-[hash:5]"}}}
+
+  less同理
+```
